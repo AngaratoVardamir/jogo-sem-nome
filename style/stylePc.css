@@ -1,0 +1,113 @@
+/* Definição de cores primárias para a interface */
+:root{
+    --colorPrimary: #2D3EF8;
+    --colorSecondary: #F7B02D;
+    --color10: #FFFFFF;
+    --color20: #4A4A4A;
+    --color30: #1A1A1A;
+}
+
+/* Resetando espaçamento padrão */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Configurações gerais do corpo */
+html, body{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgb(231, 231, 231), rgb(127, 127, 127));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do container principal "Mesa" */
+.Mesa{
+    width: 100%;
+    height: 60%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilo da carta */
+.Carta{
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+    background-color: var(--color10);
+    border: 2px solid var(--colorSecondary);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.695);
+    cursor: pointer;
+    transition: .8s;
+}
+
+/* Estilo da frente da carta */
+.frente{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Container do ícone */
+.Icon{
+    background-color: var(--colorSecondary);
+    width: 96%;
+    height: 190px;
+    border-radius: 20px 20px 65% 0px;
+    border: 5px solid var(--color10);
+    color: var(--color10);
+    font-size: 8em;
+    display: grid;
+    place-content: center;
+}
+
+/* Nome da carta */
+.Nome{
+    text-align: center;
+    margin: 6px;
+    color: var(--color20);
+    font-size: 2em;
+}
+
+/* Texto descritivo */
+.text{
+    color: var(--color20);
+    text-align: center;
+}
+
+/* Botão de ação adicional */
+.ação{
+    width: 60%;
+    height: 10%;
+    background-color: var(--colorSecondary);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    color: var(--color10);
+    transition: .5s;
+}
+
+/* Animação ao passar o mouse sobre a carta */
+.Carta:hover{
+    width: 280px;
+    height: 380px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.695);
+}
+
+.ação:hover{
+    border: 1px solid var(--colorPrimary);
+    background-color: var(--color10);
+    color: var(--colorPrimary);
+}
