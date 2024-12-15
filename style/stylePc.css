@@ -44,23 +44,47 @@ html, body{
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.695);
     cursor: pointer;
-    transition: .8s;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; /* Permite o efeito 3D */
+    position: relative;
 }
-
-/* Estilo da frente da carta */
-.frente{
+.revelada{
+    transform: rotateY(180deg); /* Inverte o lado verso */
+}
+.CartaAtivanda{
+    transform: translateY(-550px);
+}
+/* Estilo da frente e verso da carta */
+.frente, .verso{
+    position: absolute;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden; /* Esconde o lado que não está visível */
     border-radius: 20px;
+}
+/* Estilo da frente da carta */
+.frente{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-
+/* Estilo da verso da carta */
+.verso{
+    background-color: var(--color10);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: var(--colorSecondary);
+    font-size: 1.5em;
+    text-align: center;
+    transform: rotateY(180deg); /* Inverte o lado verso */
+}
 /* Container do ícone */
 .Icon{
     background-color: var(--colorSecondary);
+    background-image: linear-gradient(to left, var(--colorSecondary), #ff8c00);
     width: 96%;
     height: 190px;
     border-radius: 20px 20px 65% 0px;
@@ -99,12 +123,12 @@ html, body{
     transition: .5s;
 }
 
-/* Animação ao passar o mouse sobre a carta */
+/* Animação ao passar o mouse sobre a carta 
 .Carta:hover{
     width: 280px;
     height: 380px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.695);
-}
+}*/
 
 .ação:hover{
     border: 1px solid var(--colorPrimary);
